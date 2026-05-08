@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Riverton Dental — Dentist in Riverton, UT</title>
+<meta name="description" content="Riverton Dental offers comprehensive general, restorative, cosmetic, and emergency dental care in Riverton, Utah. Meet Dr. Marilyn Sadler and Dr. Ayefa Durrani." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" href="Favicon.png" sizes="64x64" type="image/png" />
+<style>
+  :root {
+    --blue-900:#1d5f8a;
+    --blue-800:#2a78a8;
+    --blue-700:#3a8cc4;
+    --blue-500:#6cbbe5;
+    --blue-300:#a9d6ee;
+    --blue-100:#eaf4fa;
+    --ink:#1d2733;
+    --muted:#5a6776;
+    --line:#e3ebf2;
+    --bg:#ffffff;
+    --soft:#f6fafd;
+    --gold:#c9a24a;
+    --shadow: 0 10px 30px rgba(58,140,196,.10);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body {
+    font-family: 'Montserrat', -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Lora', Georgia, serif;
+    color: var(--blue-900);
+    letter-spacing: .2px;
+    margin: 0 0 .5em;
+    line-height: 1.2;
+  }
+  h1 { font-size: clamp(2rem, 4.2vw, 3.4rem); font-weight: 600; }
+  h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 600; }
+  h3 { font-size: 1.25rem; font-weight: 600; }
+  p { margin: 0 0 1em; color: #2c3a4a; }
+  a { color: var(--blue-700); text-decoration: none; }
+  a:hover { color: var(--blue-500); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow {
+    display:inline-block; text-transform: uppercase; letter-spacing: 2px;
+    font-size: .78rem; color: var(--blue-500); font-weight: 600; margin-bottom: 10px;
+  }
+  .btn {
+    display:inline-flex; align-items:center; gap:8px;
+    padding: 12px 22px; border-radius: 999px;
+    background: var(--blue-700); color:#fff !important; font-weight: 600;
+    border: 1px solid var(--blue-700);
+    transition: transform .15s ease, background .15s ease;
+    white-space: nowrap;
+  }
+  .btn:hover { background: var(--blue-800); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--blue-800) !important; border-color: var(--blue-800); }
+  .btn.ghost:hover { background: var(--blue-100); }
+  .btn.gold { background: var(--gold); border-color: var(--gold); }
+  .btn.gold:hover { background: #b18d36; }
+
+  /* Top announcement */
+  .topbar {
+    background: var(--blue-900); color:#fff; font-size:.88rem;
+  }
+  .topbar .wrap { display:flex; justify-content:space-between; align-items:center; padding:8px 24px; flex-wrap: wrap; gap:6px; }
+  .topbar a { color:#cfe6f5; }
+  .topbar a:hover { color:#fff; }
+  .topbar-social { display:flex; align-items:center; gap:10px; padding-left:12px; border-left:1px solid rgba(255,255,255,.25); margin-left:4px; }
+  .topbar-social a { color:#cfe6f5; display:flex; align-items:center; transition:color .15s; }
+  .topbar-social a:hover { color:#fff; }
+
+  /* Header / nav */
+  header.site {
+    position: sticky; top:0; z-index: 50;
+    background: rgba(255,255,255,.96);
+    backdrop-filter: saturate(160%) blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav {
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 24px;
+    max-width:1180px; margin: 0 auto;
+  }
+  .brand { display:flex; align-items:center; gap:12px; flex-shrink: 0; }
+  .brand img { height: 52px; width:auto; display:block; }
+  .brand .name { font-family: 'Lora', serif; color: var(--blue-900); font-weight:600; font-size: 1.1rem; line-height:1; white-space: nowrap; }
+  .brand .name small { display:block; font-family: 'Montserrat', sans-serif; color: var(--muted); font-weight:500; font-size:.7rem; letter-spacing:2px; text-transform: uppercase; margin-top:6px; }
+  nav.primary { display:flex; gap: 20px; align-items:center; flex-wrap: nowrap; }
+  nav.primary a { color: var(--ink); font-weight:500; font-size:.95rem; white-space: nowrap; }
+  nav.primary a:hover { color: var(--blue-700); }
+  .call-cta { display:flex; align-items:center; gap:10px; flex-shrink: 0; }
+  .menu-btn { display:none; background:none; border:0; padding:8px; cursor:pointer; }
+  .menu-btn span { display:block; width:24px; height:2px; background: var(--ink); margin:5px 0; }
+
+  @media (max-width: 1080px) {
+    nav.primary { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; flex-direction:column; padding: 10px 24px 18px; border-bottom:1px solid var(--line); gap: 4px; }
+    nav.primary.open { display:flex; }
+    nav.primary a { padding: 10px 4px; border-bottom:1px solid var(--line); }
+    .menu-btn { display:block; }
+    .call-cta .btn.ghost { display:none; }
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: 60% center;
+    background-repeat: no-repeat;
+    color: #fff;
+    overflow: hidden;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(10,28,48,.75) 0%, rgba(10,28,48,.55) 38%, rgba(10,28,48,.15) 62%, transparent 82%);
+    pointer-events: none;
+  }
+  .hero .wrap {
+    position: relative; z-index: 1;
+    width: 100%;
+    padding: 96px 24px 110px;
+    text-align: left;
+    display: flex; flex-direction: column; align-items: flex-start;
+  }
+  .hero h1 { color: #fff; max-width: 540px; text-shadow: 0 2px 18px rgba(0,0,0,.30); }
+  .hero p.lead { font-size: 1.15rem; color: #f1f8fd; max-width: 500px; text-shadow: 0 1px 10px rgba(0,0,0,.30); }
+  .hero .hero-logo {
+    display:block; max-width: 320px; width: min(70%, 320px); height:auto;
+    margin: 0 0 24px;
+    filter: drop-shadow(0 8px 22px rgba(0,0,0,.35));
+    background: rgba(255,255,255,.92);
+    padding: 18px 28px; border-radius: 14px;
+  }
+  .hero .eyebrow { color: #ffffff; opacity: .92; }
+  .hero .cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top: 22px; justify-content: flex-start; }
+  .hero .cta-row .btn { background: var(--blue-900); color: #fff !important; border-color: var(--blue-900); box-shadow: 0 8px 22px rgba(0,0,0,.18); }
+  .hero .cta-row .btn:hover { background: #154a6e; border-color: #154a6e; }
+  .hero .cta-row .btn.gold { background: var(--gold); color:#fff !important; border-color: var(--gold); }
+  .hero .cta-row .btn.gold:hover { background:#b18d36; }
+  .hero .cta-row .btn.outline { background: rgba(255,255,255,.92); color: var(--blue-900) !important; border-color: #fff; }
+  .hero .cta-row .btn.outline:hover { background:#fff; }
+  @media (max-width: 900px) {
+    .hero { min-height: 480px; }
+    .hero .wrap { padding: 64px 24px 72px; text-align: center; align-items: center; }
+    .hero .hero-logo { max-width: 280px; padding: 14px 20px; margin: 0 auto 24px; }
+    .hero .cta-row { justify-content: center; }
+    .hero::before { background: rgba(10,28,48,.55); }
+  }
+
+  /* Quick info strip */
+  .info-strip {
+    background: var(--blue-100);
+    border-bottom: 1px solid var(--line);
+  }
+  .info-strip .wrap {
+    display:grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; padding: 22px 24px;
+  }
+  .info-strip .item { display:flex; gap:14px; align-items:flex-start; }
+  .info-strip svg { flex:0 0 28px; color: var(--blue-700); margin-top: 4px; }
+  .info-strip strong { display:block; color: var(--blue-900); }
+  .info-strip span { color: var(--muted); font-size:.92rem; }
+  @media (max-width: 800px) { .info-strip .wrap { grid-template-columns: 1fr; } }
+
+  /* Sections */
+  section.section { padding: 80px 0; }
+  section.section.alt { background: var(--soft); }
+  .section .head { text-align:center; max-width: 760px; margin: 0 auto 50px; }
+  .section .head p { color: var(--muted); }
+
+  /* Video */
+  .video-wrap {
+    max-width: 980px; margin: 0 auto;
+    border-radius: 16px; overflow: hidden;
+    box-shadow: var(--shadow); background: #000;
+  }
+  .video-wrap video { display:block; width:100%; height:auto; }
+
+  /* About + image grid */
+  .about-grid {
+    display:grid; grid-template-columns: 1fr; gap: 56px; align-items:center; max-width: 780px;
+  }
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+
+  /* Services */
+  .services {
+    display:grid; grid-template-columns: repeat(4, 1fr); gap: 22px;
+  }
+  .svc {
+    background:#fff; padding: 28px 22px; border-radius: 14px;
+    border: 1px solid var(--line);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .svc:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--blue-300); }
+  .svc .ico {
+    width: 52px; height: 52px; border-radius: 12px;
+    background: var(--blue-100); color: var(--blue-700);
+    display:flex; align-items:center; justify-content:center; margin-bottom: 14px;
+  }
+  .svc h3 { margin-bottom: 6px; }
+  .svc p { color: var(--muted); font-size:.95rem; margin: 0; }
+  @media (max-width: 1000px) { .services { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .services { grid-template-columns: 1fr; } }
+
+  /* Doctors */
+  .doctor {
+    display:grid; grid-template-columns: 240px 1fr; gap: 36px;
+    background:#fff; border:1px solid var(--line); border-radius: 18px;
+    padding: 26px; box-shadow: var(--shadow); margin-bottom: 24px;
+    align-items: start;
+  }
+  .doctor img.headshot {
+    width:100%; height: auto; aspect-ratio: 1/1; object-fit: cover;
+    border-radius: 14px;
+    background: var(--blue-100);
+  }
+  .doctor h3 { font-size: 1.6rem; margin-bottom: 4px; }
+  .doctor .role { color: var(--blue-500); font-weight:600; letter-spacing: 1px; text-transform: uppercase; font-size:.8rem; margin-bottom: 14px; display:block; }
+  .doctor p { color:#2c3a4a; }
+  @media (max-width: 900px) { .doctor { grid-template-columns: 1fr; } }
+
+  /* Team grid */
+  .team {
+    display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  .member {
+    background:#fff; border:1px solid var(--line); border-radius: 14px;
+    overflow: hidden; transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .member:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .member .ph {
+    aspect-ratio: 1/1;
+    background:
+      linear-gradient(135deg, var(--blue-100), #fff);
+    display:flex; align-items:center; justify-content:center;
+    color: var(--blue-700); border-bottom: 1px solid var(--line);
+    text-align:center; padding: 16px;
+  }
+  .member .ph svg { width: 48px; height:48px; opacity: .55; }
+  .member .body { padding: 14px 16px 18px; }
+  .member .body h3 { margin-bottom: 2px; font-size: 1.05rem; }
+  .member .body .role { color: var(--blue-500); font-size:.72rem; letter-spacing:1px; text-transform: uppercase; font-weight:600; display:block; margin-bottom: 8px; }
+  .member .body p { color: var(--muted); font-size:.85rem; margin:0; line-height: 1.5; }
+  @media (max-width: 700px) { .team { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .team { grid-template-columns: 1fr; } }
+
+  /* Office gallery */
+  .gallery {
+    display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  .gallery .tile {
+    aspect-ratio: 4/3; border-radius: 14px;
+    background:
+      linear-gradient(135deg, var(--blue-100), #fff);
+    border: 1px dashed var(--blue-300);
+    display:flex; align-items:center; justify-content:center;
+    color: var(--blue-700); font-weight:600; text-align:center; padding: 16px;
+  }
+  @media (max-width: 800px) { .gallery { grid-template-columns: 1fr 1fr; } }
+
+  /* CTA band */
+  .cta-band {
+    background: linear-gradient(135deg, var(--blue-800), var(--blue-500));
+    color:#fff; padding: 56px 0;
+  }
+  .cta-band .wrap { display:flex; justify-content:space-between; gap:24px; align-items:center; flex-wrap:wrap; }
+  .cta-band h2 { color:#fff; margin:0; }
+  .cta-band p { color:#dbeaf5; margin: 6px 0 0; }
+  .cta-band .btn { background:#fff; color: var(--blue-900) !important; border-color:#fff; }
+
+  /* Contact */
+  .contact-grid {
+    display:grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  }
+  .contact-card { background:#fff; border:1px solid var(--line); border-radius:16px; padding: 28px; box-shadow: var(--shadow); }
+  .contact-card h3 { margin-bottom: 14px; }
+  .contact-card .row { display:flex; gap: 14px; align-items:flex-start; padding: 12px 0; border-top: 1px solid var(--line); }
+  .contact-card .row:first-of-type { border-top: 0; }
+  .contact-card .row svg { color: var(--blue-700); flex:0 0 22px; margin-top: 2px; }
+  .contact-card .row strong { display:block; color: var(--blue-900); }
+  .contact-card .row span, .contact-card .row a { color: #38485a; }
+  iframe.map { width:100%; height: 100%; min-height: 360px; border:0; border-radius:16px; box-shadow: var(--shadow); }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  /* Footer */
+  footer.site {
+    background: var(--blue-900); color: #cfe6f5; padding: 50px 0 24px;
+  }
+  footer.site h4 { color:#fff; font-family: 'Montserrat', sans-serif; font-size:.95rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  footer.site .grid { display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px; }
+  footer.site a { color:#cfe6f5; }
+  footer.site a:hover { color:#fff; }
+  footer.site .legal { border-top: 1px solid rgba(255,255,255,.12); margin-top: 36px; padding-top: 18px; font-size:.85rem; color:#9ec3dc; display:flex; justify-content:space-between; gap: 12px; flex-wrap: wrap; }
+  footer.site ul { list-style:none; padding:0; margin:0; }
+  footer.site li { padding: 4px 0; }
+  @media (max-width: 800px) { footer.site .grid { grid-template-columns: 1fr 1fr; } }
+
+  /* Sticky mobile call */
+  .sticky-call {
+    display:none;
+  }
+  @media (max-width: 700px) {
+    .sticky-call {
+      display:flex; position: fixed; bottom: 16px; right: 16px;
+      z-index: 60; box-shadow: 0 10px 24px rgba(0,0,0,.25);
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top announcement bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Welcoming new patients in Riverton, UT — same-day emergencies available.</span>
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+      <span><a href="mailto:myrivertondental@gmail.com">myrivertondental@gmail.com</a> &nbsp;·&nbsp; <a href="tel:+18014468446">801-446-8446</a></span>
+      <div class="topbar-social">
+        <a href="https://www.instagram.com/rivertondental/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/RivertonDental/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.google.com/maps/search/Riverton+Dental/@40.5230513,-111.9529103,15z" target="_blank" rel="noopener" aria-label="Google Maps">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.35 11.1H12.18v2.73h5.35c-.24 1.49-1.01 2.75-2.14 3.58v2.97h3.46C20.78 18.48 22 15.44 22 12c0-.61-.06-1.21-.15-1.8l-.5.9z"/><path d="M12.18 22c2.97 0 5.46-.98 7.28-2.66l-3.46-2.69c-.96.64-2.18 1.02-3.82 1.02-2.94 0-5.43-1.98-6.32-4.65H2.27v2.78C4.08 19.57 7.86 22 12.18 22z"/><path d="M5.86 13.02A6.93 6.93 0 0 1 5.5 11c0-.7.12-1.38.35-2.02V6.2H2.27A10.18 10.18 0 0 0 2 11c0 1.64.39 3.19 1.08 4.57l2.78-2.55z"/><path d="M12.18 4.73c1.66 0 3.15.57 4.32 1.69l3.24-3.24C17.63 1.19 15.14 0 12.18 0 7.86 0 4.08 2.43 2.27 5.97l3.59 2.79c.89-2.67 3.38-4.03 6.32-4.03z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Header / nav -->
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="Riverton Dental — home">
+      <img src="logo.png" alt="Riverton Dental" />
+    </a>
+    <nav class="primary" id="primary-nav">
+      <a href="#about">About</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#services">Services</a>
+      <a href="#team">Our Team</a>
+      <a href="#office">Office</a>
+      <a href="#contact">Contact</a>
+      <a href="patient-resources.html">Patient Resources</a>
+    </nav>
+    <div class="call-cta">
+      <a class="btn ghost" href="#contact">Book a Visit</a>
+      <a class="btn" href="tel:+18014468446" aria-label="Call Riverton Dental">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        Call 801-446-8446
+      </a>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="document.getElementById('primary-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <img class="hero-logo" src="logo.png" alt="Riverton Dental" />
+    <span class="eyebrow">Riverton, Utah</span>
+    <h1>Comfortable, Comprehensive Dental Care for Every Smile.</h1>
+    <p class="lead">From cleanings and cosmetic dentistry to implants, Invisalign, and same-day emergencies — Riverton Dental brings advanced care to a friendly neighborhood practice.</p>
+    <div class="cta-row">
+      <a class="btn gold" href="tel:+18014468446">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        Call 801-446-8446
+      </a>
+      <a class="btn outline" href="#contact">Request an Appointment</a>
+      <a href='https://www.zocdoc.com/practice/riverton-family-dental-pllc-177676?lock=true&isNewPatient=false&referrerType=widget' class='zd-plugin' data-type='book-button' data-practice-id='177676' title='Riverton Family Dental, PLLC' style='display:flex;align-items:center;'><img src='https://offsiteSchedule.zocdoc.com/images/remote/zd_bookonline_162x48.png?type=bobjs&monolith_provider_id=177676&practice_id=pt__az8siM-E0Kz67SQUEh54A' alt='Book on ZocDoc' title='Riverton Family Dental, PLLC' style='border:0;border-radius:8px;display:block;'/></a>
+    </div>
+  </div>
+</section>
+
+<!-- Quick info strip -->
+<div class="info-strip">
+  <div class="wrap">
+    <div class="item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div><strong>2464 W 12600 S, Ste 150</strong><span>Riverton, Utah 84065</span></div>
+    </div>
+    <div class="item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div><strong>Mon–Thu · 8a–5p</strong><span>Friday · 8a–1p</span></div>
+    </div>
+    <div class="item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+      <div><strong><a href="tel:+18014468446">801-446-8446</a></strong><span><a href="mailto:myrivertondental@gmail.com">myrivertondental@gmail.com</a></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Practice video -->
+<section class="section" id="video">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">A look inside</span>
+      <h2>Welcome to Riverton Dental</h2>
+      <p>Take a quick tour of our office and meet the team that makes every visit feel a little more like home.</p>
+    </div>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/qisQE70u4u0" title="Welcome to Riverton Dental" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%; aspect-ratio:16/9; border:0; display:block;"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section alt" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">About Us</span>
+        <h2>Personal care, modern technology, a team you can trust.</h2>
+        <p>At Riverton Dental, we believe great dentistry starts with a relationship. Our team takes time to listen, explain your options clearly, and craft care plans that fit your goals — from quick cleanings to full smile makeovers. We invest in modern technology so treatments are gentler, faster, and longer-lasting, while keeping the warm, neighborhood feel our patients have known for years.</p>
+        <p>Whether you're bringing in your child for their first visit or finally tackling a smile you've been thinking about for years, we're here to make it comfortable. Same-day emergencies, financing options, and most insurance plans are welcome.</p>
+        <a class="btn" href="#doctors">Meet the Doctors</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Doctors -->
+<section class="section" id="doctors">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Meet the Doctors</span>
+      <h2>Experience you can feel from the first hello.</h2>
+      <p>Two doctors with deep training, a love of teaching, and a shared commitment to patient-first care.</p>
+    </div>
+
+    <article class="doctor">
+      <img class="headshot" src="Dr.Sadlerphoto.png" alt="Portrait of Dr. Marilyn Sadler" />
+      <div>
+        <h3>Dr. Marilyn Sadler, DDS</h3>
+        <span class="role">Doctor of Dental Surgery</span>
+        <p>Meet Dr. Sadler, our wonderful third-generation dentist. With an incredibly diverse background, she has experienced every role in a dental office — from dental assistant to front office staff, hygienist, and now dentist. Her journey has given her a great appreciation for teamwork, and she truly values her staff.</p>
+        <p>Originally from North Dakota, Dr. Sadler's passion for dentistry blossomed while working as a dental assistant in rural Alaska. Inspired by her experiences there, she decided to become a dentist. Before earning her Doctor of Dental Surgery degree from the University of Utah, she taught as a dental assistant instructor and served as an adjunct dental hygiene instructor at Weber State University.</p>
+        <p>Dr. Sadler's commitment to her profession goes hand in hand with her love for giving back. After completing her dental hygiene education, she took on leadership roles in the Northern Utah Dental Hygiene Association, serving as President for two years. She has also been the liaison for dental schools with the Utah Dental Association and is actively involved on the DOPL dental board.</p>
+        <p>Her generosity extends beyond local efforts — Dr. Sadler enjoys participating in humanitarian trips. She has traveled to the Dominican Republic with the G3 Foundation, worked in Kenya with 100 Humanitarians, and Honduras and Mexico with Global Dental Partners, where she provided dental care and taught valuable life skills. She also dedicates time to serve at Midvale CBC, a local community clinic, helping those in need year-round.</p>
+        <p>On a personal note, Dr. Sadler met her husband, Trevor, in Alaska, and they have happily called Utah home for over 21 years. Together, they have two adventurous children, McKinley and Summit, along with a sweet old golden retriever named Teton.</p>
+      </div>
+    </article>
+
+    <article class="doctor">
+      <img class="headshot" src="Dr.Durraniphoto.png" alt="Portrait of Dr. Ayefa Durrani" />
+      <div>
+        <h3>Dr. Ayefa Durrani</h3>
+        <span class="role">General Dentist · Periodontics Focus</span>
+        <p>Dr. Durrani prides herself on providing comprehensive dental care and creating a relationship of trust with her patients.</p>
+        <p>Dr. Durrani studied in a three-year program leading to a Master of Dental Surgery (Periodontics) at the National University of Singapore, and earned a Membership of Restorative Dentistry from the Royal College of Surgeons in Edinburgh, UK in 2010. After practicing primarily as a periodontist for several years, she moved to the United States and completed the Advanced Education in General Dentistry program at Marquette University School of Dentistry in 2013.</p>
+        <p>That training led to a career in the U.S. as a general dentist with a strong interest in periodontics. In addition to all aspects of general dentistry, her areas of expertise include managing severe gum disease, implants, gum recession, and crown lengthening surgery. Outside the office, Dr. Durrani loves spending time with her family and traveling.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section alt" id="services">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Our Services</span>
+      <h2>Comprehensive dentistry, all in one place.</h2>
+      <p>Preventive, restorative, cosmetic, and emergency care under one roof — so you don't have to bounce between offices.</p>
+    </div>
+    <div class="services">
+      <div class="svc">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2.5 2 4.5 2 6.5 2 0 5-1.5 11-6.5 18-5-7-6.5-13-6.5-18 2 0 4 0 6.5-2z"/></svg></div>
+        <h3>General Dentistry</h3>
+        <p>Cleanings, exams, fillings, and preventive care that keep small problems small.</p>
+      </div>
+      <div class="svc">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+        <h3>Restorative</h3>
+        <p>Crowns, bridges, implants, and whitening to restore strength, function, and beauty.</p>
+      </div>
+      <div class="svc">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5 5.6.8-4 3.9.9 5.6L12 14.8 7.1 17.3l.9-5.6-4-3.9L9.6 7z"/></svg></div>
+        <h3>Cosmetic</h3>
+        <p>Veneers, bonding, and complete smile makeovers tailored to you.</p>
+      </div>
+      <div class="svc">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
+        <h3>Invisalign</h3>
+        <p>Clear, removable aligners that straighten smiles with less time in braces.</p>
+      </div>
+      <div class="svc">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M5 10h14l-1.5 11h-11z"/></svg></div>
+        <h3>Periodontics</h3>
+        <p>Advanced gum disease care, recession treatment, and crown lengthening.</p>
+      </div>
+      <div class="svc">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3>Same-Day Emergencies</h3>
+        <p>Toothaches and trauma can't wait. Call us first — we'll get you in fast.</p>
+      </div>
+      <div class="svc">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-7 8-13a8 8 0 0 0-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg></div>
+        <h3>Implants</h3>
+        <p>Long-lasting tooth replacement that looks and functions like the real thing.</p>
+      </div>
+      <div class="svc">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/></svg></div>
+        <h3>Family Dentistry</h3>
+        <p>Gentle care for kids, teens, parents, and grandparents — all under one roof.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Patient testimonial -->
+<section class="section" id="stories">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Patient Stories</span>
+      <h2>Hear it from the people we care for.</h2>
+      <p>Real patients sharing their experiences at Riverton Dental.</p>
+    </div>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/L5_LWtAL2qk" title="Riverton Dental patient testimonial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%; aspect-ratio:16/9; border:0; display:block;"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section alt" id="team">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Our Team</span>
+      <h2>The friendly faces behind every visit.</h2>
+      <p>Our team brings warmth, skill, and a focus on patient comfort to every appointment.</p>
+    </div>
+    <div class="team">
+
+      <div class="member">
+        <div class="ph" aria-label="Photo of Mandi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div>
+        <div class="body">
+          <h3>Mandi</h3>
+          <span class="role">Office Manager</span>
+          <p>Bio coming soon — Mandi keeps the office running and is usually the first friendly voice you'll hear when you call.</p>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="ph" aria-label="Photo of Kim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div>
+        <div class="body">
+          <h3>Kim</h3>
+          <span class="role">Hygienist</span>
+          <p>Bio coming soon — Kim takes her time, explains everything, and helps patients build healthy habits between visits.</p>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="ph" aria-label="Photo of Sila"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div>
+        <div class="body">
+          <h3>Sila</h3>
+          <span class="role">Hygienist</span>
+          <p>Bio coming soon — Sila brings a gentle touch and a passion for helping patients feel cared for at every cleaning.</p>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="ph" aria-label="Photo of Lynsie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div>
+        <div class="body">
+          <h3>Lynsie</h3>
+          <span class="role">Front Desk / Receptionist</span>
+          <p>Bio coming soon — Lynsie is one of the welcoming faces you'll see when you arrive at Riverton Dental.</p>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="ph" aria-label="Photo of Christine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div>
+        <div class="body">
+          <h3>Christine</h3>
+          <span class="role">Dental Assistant / Esthetician</span>
+          <p>Bio coming soon — Christine pairs clinical experience with an esthetics background for chairside comfort and great results.</p>
+        </div>
+      </div>
+
+      <div class="member">
+        <div class="ph" aria-label="Photo of Shaylee"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div>
+        <div class="body">
+          <h3>Shaylee</h3>
+          <span class="role">Dental Assistant</span>
+          <p>Bio coming soon — Shaylee is known for putting nervous patients at ease and keeping every visit on track.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Office gallery -->
+<section class="section" id="office">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Our Office</span>
+      <h2>Designed to feel a little less like a dental office.</h2>
+      <p>Comfortable, welcoming, and modern — drop your real office photos into the spaces below when you're ready.</p>
+    </div>
+    <div class="video-wrap" style="margin-bottom: 40px;">
+      <iframe src="https://www.youtube.com/embed/feT2B4Mz5V8" title="Riverton Dental office tour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%; aspect-ratio:16/9; border:0; display:block;"></iframe>
+    </div>
+    <div class="gallery">
+      <img class="tile" src="Riverton Office 1.jpg" alt="Riverton Dental office" style="object-fit:cover; padding:0; border:none;" />
+      <img class="tile" src="Riverton Office Hand Wax.jpg" alt="Riverton Dental hand wax treatment" style="object-fit:cover; padding:0; border:none;" />
+      <img class="tile" src="Riverton Office Spa.jpg" alt="Riverton Dental spa area" style="object-fit:cover; padding:0; border:none;" />
+    </div>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>Ready for a visit that feels easy from start to finish?</h2>
+      <p>Call us — most patients can get scheduled within the same week.</p>
+    </div>
+    <a class="btn" href="tel:+18014468446">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+      Call 801-446-8446
+    </a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Visit Us</span>
+      <h2>We'd love to meet you.</h2>
+      <p>Reach out by phone or email and we'll find a time that works for you.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Riverton Dental</h3>
+        <div class="row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><strong>Address</strong><span>2464 W 12600 S, Ste 150<br>Riverton, Utah 84065</span></div>
+        </div>
+        <div class="row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          <div><strong>Phone</strong><a href="tel:+18014468446">801-446-8446</a></div>
+        </div>
+        <div class="row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div><strong>Email</strong><a href="mailto:myrivertondental@gmail.com">myrivertondental@gmail.com</a></div>
+        </div>
+        <div class="row">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div><strong>Hours</strong><span>Mon–Thu · 8:00 AM – 5:00 PM<br>Friday · 8:00 AM – 1:00 PM</span></div>
+        </div>
+        <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="tel:+18014468446">Call Us</a>
+          <a class="btn ghost" href="mailto:myrivertondental@gmail.com">Email Us</a>
+        </div>
+      </div>
+      <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=2464+W+12600+S+Riverton+UT+84065&output=embed" title="Riverton Dental map"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img src="logo.png" alt="Riverton Dental" style="height:54px; background:#fff; padding:8px 12px; border-radius:8px;" />
+        <p style="margin-top:14px; max-width:340px;">A neighborhood dental practice in Riverton, Utah, focused on comfortable, comprehensive care for the whole family.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#doctors">Our Doctors</a></li>
+          <li><a href="#team">Our Team</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>2464 W 12600 S, Ste 150</li>
+          <li>Riverton, Utah 84065</li>
+          <li>Mon–Thu · 8a–5p</li>
+          <li>Friday · 8a–1p</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="tel:+18014468446">801-446-8446</a></li>
+          <li><a href="mailto:myrivertondental@gmail.com">myrivertondental@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr"></span> Riverton Dental. All rights reserved.</span>
+      <span>Built with care for our patients.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="btn sticky-call" href="tel:+18014468446" aria-label="Call Riverton Dental">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+  Call
+</a>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+<script>(function (d) {var script = d.createElement('script'); script.type = 'text/javascript'; script.async = true; script.src = 'https://offsiteschedule.zocdoc.com/plugin/embed';var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);})(document);</script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Patient Resources — Riverton Dental</title>
+<meta name="description" content="New patient forms, financing options, and insurance information for Riverton Dental in Riverton, Utah." />
+<link rel="icon" href="Favicon.png" sizes="64x64" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blue-900:#1d5f8a;
+    --blue-800:#2a78a8;
+    --blue-700:#3a8cc4;
+    --blue-500:#6cbbe5;
+    --blue-300:#a9d6ee;
+    --blue-100:#eaf4fa;
+    --ink:#1d2733;
+    --muted:#5a6776;
+    --line:#e3ebf2;
+    --bg:#ffffff;
+    --soft:#f6fafd;
+    --gold:#c9a24a;
+    --shadow: 0 10px 30px rgba(58,140,196,.10);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; }
+  body {
+    font-family: 'Montserrat', -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: 'Lora', Georgia, serif; color: var(--blue-900); letter-spacing: .2px; margin: 0 0 .5em; line-height: 1.2; }
+  h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 600; }
+  h2 { font-size: clamp(1.4rem, 2.2vw, 1.9rem); font-weight: 600; }
+  h3 { font-size: 1.15rem; font-weight: 600; }
+  p { margin: 0 0 1em; color: #2c3a4a; }
+  a { color: var(--blue-700); text-decoration: none; }
+  a:hover { color: var(--blue-500); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { display:inline-block; text-transform: uppercase; letter-spacing: 2px; font-size: .78rem; color: var(--blue-500); font-weight: 600; margin-bottom: 10px; }
+  .btn {
+    display:inline-flex; align-items:center; gap:8px;
+    padding: 12px 22px; border-radius: 999px;
+    background: var(--blue-700); color:#fff !important; font-weight: 600;
+    border: 1px solid var(--blue-700);
+    transition: transform .15s ease, background .15s ease;
+    white-space: nowrap;
+  }
+  .btn:hover { background: var(--blue-800); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--blue-800) !important; border-color: var(--blue-800); }
+  .btn.ghost:hover { background: var(--blue-100); }
+  .btn.gold { background: var(--gold); border-color: var(--gold); color:#fff !important; }
+  .btn.gold:hover { background: #b18d36; }
+
+  /* Topbar */
+  .topbar { background: var(--blue-900); color:#fff; font-size:.88rem; }
+  .topbar .wrap { display:flex; justify-content:space-between; align-items:center; padding:8px 24px; flex-wrap: wrap; gap:6px; }
+  .topbar a { color:#cfe6f5; }
+  .topbar a:hover { color:#fff; }
+  .topbar-social { display:flex; align-items:center; gap:10px; padding-left:12px; border-left:1px solid rgba(255,255,255,.25); margin-left:4px; }
+  .topbar-social a { color:#cfe6f5; display:flex; align-items:center; transition:color .15s; }
+  .topbar-social a:hover { color:#fff; }
+
+  /* Header */
+  header.site {
+    position: sticky; top:0; z-index: 50;
+    background: rgba(255,255,255,.96);
+    backdrop-filter: saturate(160%) blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding: 14px 24px; max-width:1180px; margin: 0 auto; }
+  .brand { display:flex; align-items:center; gap:12px; flex-shrink: 0; }
+  .brand img { height: 52px; width:auto; display:block; }
+  .brand .name { font-family: 'Lora', serif; color: var(--blue-900); font-weight:600; font-size: 1.1rem; line-height:1; white-space: nowrap; }
+  .brand .name small { display:block; font-family: 'Montserrat', sans-serif; color: var(--muted); font-weight:500; font-size:.7rem; letter-spacing:2px; text-transform: uppercase; margin-top:6px; }
+  nav.primary { display:flex; gap: 20px; align-items:center; flex-wrap: nowrap; }
+  nav.primary a { color: var(--ink); font-weight:500; font-size:.95rem; white-space: nowrap; }
+  nav.primary a:hover { color: var(--blue-700); }
+  nav.primary a.active { color: var(--blue-700); }
+  .call-cta { display:flex; align-items:center; gap:10px; flex-shrink: 0; }
+  .menu-btn { display:none; background:none; border:0; padding:8px; cursor:pointer; }
+  .menu-btn span { display:block; width:24px; height:2px; background: var(--ink); margin:5px 0; }
+
+  @media (max-width: 1080px) {
+    nav.primary { display:none; position:absolute; top:100%; left:0; right:0; background:#fff; flex-direction:column; padding: 10px 24px 18px; border-bottom:1px solid var(--line); gap: 4px; }
+    nav.primary.open { display:flex; }
+    nav.primary a { padding: 10px 4px; border-bottom:1px solid var(--line); }
+    .menu-btn { display:block; }
+    .call-cta .btn.ghost { display:none; }
+  }
+
+  /* Page hero */
+  .page-hero {
+    background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
+    color: #fff; padding: 60px 0 50px;
+  }
+  .page-hero h1 { color: #fff; }
+  .page-hero p { color: #cfe6f5; max-width: 560px; font-size: 1.05rem; }
+
+  /* Content */
+  .content { padding: 64px 0; }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 800px) { .content-grid { grid-template-columns: 1fr; } }
+
+  /* Cards */
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+  }
+  .card .card-icon {
+    width: 52px; height: 52px; border-radius: 12px;
+    background: var(--blue-100); color: var(--blue-700);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 18px;
+  }
+  .card h3 { margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: .95rem; }
+
+  /* Form card */
+  .form-card {
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 40px;
+    margin-bottom: 48px;
+  }
+  .form-card .eyebrow { margin-bottom: 6px; }
+
+  /* New patient form */
+  .np-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+  @media (max-width: 600px) { .np-form { grid-template-columns: 1fr; } }
+  .np-form .field { display:flex; flex-direction:column; gap: 6px; }
+  .np-form .field.full { grid-column: 1 / -1; }
+  .np-form label { font-size:.85rem; font-weight:600; color: var(--blue-900); }
+  .np-form input, .np-form select, .np-form textarea {
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: .95rem;
+    color: var(--ink);
+    background: #fff;
+    transition: border-color .15s;
+  }
+  .np-form input:focus, .np-form select:focus, .np-form textarea:focus {
+    outline: none;
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 3px rgba(108,187,229,.18);
+  }
+  .np-form textarea { min-height: 90px; resize: vertical; }
+  .form-note { font-size:.82rem; color: var(--muted); margin-top: 8px; }
+  .form-submit { margin-top: 24px; }
+
+  /* Financing logos */
+  .financing-logos { display:flex; gap:20px; align-items:center; flex-wrap:wrap; margin-top: 18px; }
+  .fin-badge {
+    display:flex; align-items:center; justify-content:center;
+    padding: 12px 24px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    font-weight:700; font-size: 1.05rem;
+    color: var(--blue-900);
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+  }
+  .fin-badge:hover { box-shadow: var(--shadow); transform: translateY(-1px); color: var(--blue-900); }
+
+  /* Insurance list */
+  .insurance-note {
+    background: var(--blue-100);
+    border-left: 4px solid var(--blue-500);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 22px;
+    margin-top: 16px;
+    font-size:.93rem;
+    color: #2c3a4a;
+  }
+
+  /* Footer */
+  footer.site { background: var(--blue-900); color: #cfe6f5; padding: 50px 0 24px; }
+  footer.site h4 { color:#fff; font-family: 'Montserrat', sans-serif; font-size:.95rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  footer.site .grid { display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px; }
+  footer.site a { color:#cfe6f5; }
+  footer.site a:hover { color:#fff; }
+  footer.site .legal { border-top: 1px solid rgba(255,255,255,.12); margin-top: 36px; padding-top: 18px; font-size:.85rem; color:#9ec3dc; display:flex; justify-content:space-between; gap: 12px; flex-wrap: wrap; }
+  footer.site ul { list-style:none; padding:0; margin:0; }
+  footer.site li { padding: 4px 0; }
+  @media (max-width: 800px) { footer.site .grid { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- Top announcement bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span>Welcoming new patients in Riverton, UT — same-day emergencies available.</span>
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+      <span><a href="mailto:myrivertondental@gmail.com">myrivertondental@gmail.com</a> &nbsp;·&nbsp; <a href="tel:+18014468446">801-446-8446</a></span>
+      <div class="topbar-social">
+        <a href="https://www.instagram.com/rivertondental/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/RivertonDental/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.google.com/maps/search/Riverton+Dental/@40.5230513,-111.9529103,15z" target="_blank" rel="noopener" aria-label="Google Maps">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.35 11.1H12.18v2.73h5.35c-.24 1.49-1.01 2.75-2.14 3.58v2.97h3.46C20.78 18.48 22 15.44 22 12c0-.61-.06-1.21-.15-1.8l-.5.9z"/><path d="M12.18 22c2.97 0 5.46-.98 7.28-2.66l-3.46-2.69c-.96.64-2.18 1.02-3.82 1.02-2.94 0-5.43-1.98-6.32-4.65H2.27v2.78C4.08 19.57 7.86 22 12.18 22z"/><path d="M5.86 13.02A6.93 6.93 0 0 1 5.5 11c0-.7.12-1.38.35-2.02V6.2H2.27A10.18 10.18 0 0 0 2 11c0 1.64.39 3.19 1.08 4.57l2.78-2.55z"/><path d="M12.18 4.73c1.66 0 3.15.57 4.32 1.69l3.24-3.24C17.63 1.19 15.14 0 12.18 0 7.86 0 4.08 2.43 2.27 5.97l3.59 2.79c.89-2.67 3.38-4.03 6.32-4.03z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Header / nav -->
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html" aria-label="Riverton Dental — home">
+      <img src="logo.png" alt="Riverton Dental" />
+    </a>
+    <nav class="primary" id="primary-nav">
+      <a href="index.html#about">About</a>
+      <a href="index.html#doctors">Doctors</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#team">Our Team</a>
+      <a href="index.html#office">Office</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="patient-resources.html" class="active">Patient Resources</a>
+    </nav>
+    <div class="call-cta">
+      <a class="btn ghost" href="index.html#contact">Book a Visit</a>
+      <a class="btn" href="tel:+18014468446" aria-label="Call Riverton Dental">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        Call 801-446-8446
+      </a>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="document.getElementById('primary-nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Page hero -->
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:rgba(255,255,255,.75);">Your Visit Starts Here</span>
+    <h1>Patient Resources</h1>
+    <p>Save time at your appointment — fill out your new patient information below, and learn about our financing and insurance options.</p>
+  </div>
+</div>
+
+<!-- Main content -->
+<div class="content">
+  <div class="wrap">
+
+    <!-- New patient form -->
+    <div class="form-card">
+      <span class="eyebrow">New Patients</span>
+      <h2>New Patient Information Form</h2>
+      <p style="color:var(--muted); max-width:600px;">Take care of the paperwork before you arrive. Fill out the form below and we'll have your information ready when you come in.</p>
+
+      <form class="np-form" action="#" method="post">
+        <div class="field">
+          <label for="fname">First Name *</label>
+          <input type="text" id="fname" name="fname" required placeholder="Jane" />
+        </div>
+        <div class="field">
+          <label for="lname">Last Name *</label>
+          <input type="text" id="lname" name="lname" required placeholder="Smith" />
+        </div>
+        <div class="field">
+          <label for="dob">Date of Birth *</label>
+          <input type="date" id="dob" name="dob" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="(801) 555-0123" />
+        </div>
+        <div class="field full">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" />
+        </div>
+        <div class="field full">
+          <label for="address">Street Address</label>
+          <input type="text" id="address" name="address" placeholder="123 Main Street" />
+        </div>
+        <div class="field">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" placeholder="Riverton" />
+        </div>
+        <div class="field">
+          <label for="zip">ZIP Code</label>
+          <input type="text" id="zip" name="zip" placeholder="84065" />
+        </div>
+        <div class="field full">
+          <label for="insurance">Insurance Provider</label>
+          <input type="text" id="insurance" name="insurance" placeholder="e.g. Delta Dental, Cigna, MetLife…" />
+        </div>
+        <div class="field full">
+          <label for="insid">Insurance Member ID</label>
+          <input type="text" id="insid" name="insid" placeholder="Member ID / Policy Number" />
+        </div>
+        <div class="field full">
+          <label for="reason">Reason for Visit</label>
+          <select id="reason" name="reason">
+            <option value="">Select one…</option>
+            <option>New patient exam &amp; cleaning</option>
+            <option>Toothache / pain</option>
+            <option>Cosmetic consultation</option>
+            <option>Invisalign consultation</option>
+            <option>Implant consultation</option>
+            <option>Emergency</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="notes">Additional Notes or Concerns</label>
+          <textarea id="notes" name="notes" placeholder="Anything you'd like us to know before your visit…"></textarea>
+        </div>
+        <div class="field full form-submit">
+          <button type="submit" class="btn gold" style="font-size:1rem; padding:14px 32px;">Submit Form</button>
+          <p class="form-note" style="margin-top:12px;">By submitting this form you consent to our team contacting you to confirm your appointment. Your information is kept private and secure.</p>
+        </div>
+      </form>
+    </div>
+
+    <!-- Financing & Insurance cards -->
+    <div class="content-grid">
+
+      <div class="card">
+        <div class="card-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <h3>Flexible Payment Options</h3>
+        <p>We accept cash, checks, Visa, MasterCard, Discover, and American Express. Financing is available through our trusted partners so you can start treatment today.</p>
+        <div class="financing-logos">
+          <a class="fin-badge" href="https://www.carecredit.com" target="_blank" rel="noopener">CareCredit</a>
+          <a class="fin-badge" href="https://www.withcherry.com" target="_blank" rel="noopener">Cherry</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-7 8-13a8 8 0 0 0-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+        </div>
+        <h3>Insurance</h3>
+        <p>We work with most major insurance providers and file claims on your behalf as a courtesy. Coverage varies by plan, so we'll provide an estimate before treatment begins.</p>
+        <div class="insurance-note">
+          Patients are responsible for any deductibles and balances not covered by their plan. We're happy to answer questions — just call us at <a href="tel:+18014468446">801-446-8446</a>.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center; padding: 20px 0 10px;">
+      <p style="color:var(--muted); margin-bottom:18px;">Have questions before your visit? We're happy to help.</p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a class="btn" href="tel:+18014468446">Call 801-446-8446</a>
+        <a class="btn ghost" href="mailto:myrivertondental@gmail.com">Email Us</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img src="logo.png" alt="Riverton Dental" style="height:54px; background:#fff; padding:8px 12px; border-radius:8px;" />
+        <p style="margin-top:14px; max-width:340px;">A neighborhood dental practice in Riverton, Utah, focused on comfortable, comprehensive care for the whole family.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#doctors">Our Doctors</a></li>
+          <li><a href="index.html#team">Our Team</a></li>
+          <li><a href="patient-resources.html">Patient Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>2464 W 12600 S, Ste 150</li>
+          <li>Riverton, Utah 84065</li>
+          <li>Mon–Thu · 8a–5p</li>
+          <li>Friday · 8a–1p</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="tel:+18014468446">801-446-8446</a></li>
+          <li><a href="mailto:myrivertondental@gmail.com">myrivertondental@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr"></span> Riverton Dental. All rights reserved.</span>
+      <span>Built with care for our patients.</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
